@@ -1,0 +1,112 @@
+<div class="toolbar"><span><strong><h1>Enter Scores</h1></strong></span>
+    <nav style="position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;">
+    <div class="nav-bg"></div>
+    <ul style=" list-style: none;
+    margin: 0;
+    padding: .2em 2em;
+    float: right;">
+      
+      <li style=" display: inline-block;
+      
+      margin: 0;
+      padding: .2em .7em;"><a style="width: 100%;
+  height: 100%;
+  color: white;
+  text-decoration: none;
+  font-family: Ubuntu;
+  font-size: 1.15em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  transition: .25s ease-in-out;" mat-button routerLink="/adminlivescores"> LIVE SCORES </a></li>
+      <li style=" display: inline-block;
+      margin: 0;
+      padding: .2em .7em;"><a style="width: 100%;
+  height: 100%;
+  color: white;
+  text-decoration: none;
+  font-family: Ubuntu;
+  font-size: 1.15em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  transition: .25s ease-in-out;" mat-button routerLink="/adminoldrecords"> OLD RECORDS </a></li>
+      <li style=" display: inline-block;
+      margin: 0;
+      padding: .2em .7em;"> <a  style="width: 100%;
+  height: 100%;
+  color: white;
+  text-decoration: none;
+  font-family: Ubuntu;
+  font-size: 1.15em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  transition: .25s ease-in-out;" mat-button (click)="logout()"> Log Out</a></li>
+    </ul>
+    
+  </nav>
+    <!-- <span style="top:0px; right: 1px; position: absolute;"><button type="button" value="logout" (click)="logout()">LOG OUT</button></span> -->
+</div><br>
+<br>
+
+<div class = 'row m-0 w-100'>
+    <div class = 'col-md-4 offset-4 mt-5'>
+    
+    <form #myform = "ngForm" (ngSubmit) = "onSubmit(myform)" >
+        <div class = 'form-group'>
+            <label>id:-</label><br>
+        <input class = 'form-control' type = "text" name = "id" placeholder = "Enter id" ngModel>
+        </div><br>
+    <div class = 'form-group'>
+        <label>Team:-</label><br>
+    <input class = 'form-control' type = "text" name = "team" placeholder = "Enter team" ngModel>
+    </div>
+
+    <br><label>Player:-</label><br>
+    <div class = 'form-group'>
+    <input class = 'form-control' type = "text" name = "player" placeholder = "Enter Player name" ngModel>
+    </div>
+    <br>
+    <div class = 'form-group'>
+        <label for="over">Which Over:</label><br>
+
+<select name="over" id="over" place-holder="select over" ngModel>
+  <option value="0">0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+</select></div>
+<br>
+<div class = 'form-group'>
+<label>ball:-</label><br>
+    <!-- <div class = 'form-group'> -->
+    <input class = 'form-control' type = "text" name = "ball" placeholder = "Enter no of balls" ngModel>
+    </div>
+    <br>
+    <div class = 'form-group'>
+    <label>run:-</label><br>
+
+    <input class = 'form-control' type = "text" name = "run" placeholder = "Enter run" ngModel>
+    </div>
+    <br>
+    <div class = 'form-group'>
+    <label>status:-</label><br>
+
+    <input class = 'form-control' type = "text" name = "status" placeholder = "Enter status" ngModel>
+    </div>
+    <button type = "submit" value = "ENTER">ENTER</button>
+    </form>
+   
+    </div>
+
+   

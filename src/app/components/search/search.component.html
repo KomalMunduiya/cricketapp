@@ -1,0 +1,61 @@
+<div class="component">
+  <header class="header">
+    <div class="overlay">
+      <button routerLink="../dashboard">Home</button>
+      <h1>Simply The Best</h1>
+      <h3>Find your favourite player</h3>
+      <p>“You don’t win or lose the games because of the 11 you select. You win or lose with that those 11 do on the
+        field.” – Rahul Dravid</p>
+      <p>“Some folks will say ‘Oh, Winning ain’t all!” But I know it is all. At the end of the day no one looks at the
+        loser. So that is why we play to win.” – Vivian Richards</p>
+      <p>"The joy of doing well as a batsman for your country is much more than that little joy of going for a party and
+        enjoying music. It is a completely different high, and I get high by performances. That’s what I enjoy now.” –
+        Virat Kohli</p>
+      <p>“Nobody goes undefeated all the time. If you can pick up after a crushing defeat, and go on to win again, you
+        are going to be a champion some day!” – Kumara Sangakkara</p>
+      <br>
+    </div>
+  </header>
+
+  <div class="formTaker-Expansion">
+    <mat-form-field appearance="outline">
+      <mat-label>Search Player</mat-label>
+      <input matInput placeholder="Please enter Name" [(ngModel)]="val">
+      <mat-hint>eg. Kohli</mat-hint>
+    </mat-form-field>
+    <button mat-raised-button (click)="getData(val)" class="buttn" color="primary">Search</button>
+  </div>
+
+
+
+  <div class="cardContainer">
+    <aside class="profile-card" *ngFor="let data of list | paginate: config">
+      <div class="mask-shadow"></div>
+      <header>
+        <!-- here’s the avatar -->
+        <a href="https://tutsplus.com">
+          <img [src]="data.imageUrl" alt={{data.name}}>
+        </a>
+        <!-- the username -->
+        <h1> </h1>
+        <h1>{{data.name}}</h1>
+        <!-- location -->
+        <h2>{{data.country}}</h2>
+      </header>
+      <div>
+        <mat-card-actions>
+          <button mat-icon-button color="warn" class="button-pos" (click)="addToFav(data)">
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </mat-card-actions>
+      </div>
+      <!-- bit of a bio; who are you? -->
+      <div class="profile-bio">
+        <p>{{data.majorTeams}}</p>
+      </div>
+    </aside>
+  </div>
+  <div class="pagination">
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+  </div>
+</div>

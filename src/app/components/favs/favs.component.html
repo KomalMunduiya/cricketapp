@@ -1,0 +1,61 @@
+<header>
+   <div id="main">
+     <ul class="nav">
+      <li>
+         <a mat-button routerLink="../dashboard" title="Home">
+           <span class="icon-stack">
+             <i class="icon-circle icon-stack-base"></i>
+             <i class="icon-home icon-light"></i>
+           </span>
+           <span class="text">Home</span>
+         </a>
+       </li>
+       <li>
+         <a mat-button routerLink="/search" title="Search">
+           <span class="icon-stack">
+             <i class="icon-circle icon-stack-base"></i>
+             <i class="icon-leaf icon-light"></i>
+           </span>
+           <span class="text">Search</span>
+         </a>
+       </li>
+       <li>
+         <a mat-button routerLink="/recom" title="Recommends">
+           <span class="icon-stack">
+             <i class="icon-circle icon-stack-base"></i>
+             <i class="icon-leaf icon-light"></i>
+           </span>
+           <span class="text">Recommends</span>
+         </a>
+       </li>
+     </ul>
+   </div>
+   <div id="stickyContent"></div>
+ </header>
+ 
+ <div class="contentWrap">
+ <div class="content">
+   <div class="plx-card gold" *ngFor="let data of list">
+      <div class="pxc-bg" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTmoMVWxSvI9eFaH0rxsSregQuYzVml6X2rWxLIw0aNQhF4_zTF&usqp=CAU')">  </div>
+      <div class="pxc-avatar"><img [src]="data.imageURL"/></div>
+      <div class="pxc-stopper">   </div>
+      <div class="pxc-subcard">
+        <div class="pxc-title">{{data.name}}</div>
+        <div class="pxc-sub"> {{data.fullName}}  </div>
+        <div class="pxc-feats"><span>{{data.majorTeams}}</span>
+        </div>
+        <div class="pxc-feats">
+           <span>{{data.currentAge}}</span>
+           <span>{{data.playingRole}}</span>
+        </div>
+        <mat-card-actions>
+          <button mat-icon-button color="warn" class="button-pos" (click)="removeFromFav(data)">Remove
+          </button>
+        </mat-card-actions>
+        <div class="pxc-tags">
+          <div>{{data.pid}}</div>
+        </div>
+      </div>
+   
+ </div>
+ </div>

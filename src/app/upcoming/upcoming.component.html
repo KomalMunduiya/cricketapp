@@ -1,0 +1,55 @@
+<!-- <app-header></app-header> -->
+
+
+<div class="body">
+  <div class="toolbar" role="banner"><span><strong><h1>UPCOMING MATCHES</h1></strong></span>
+    <nav style="position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;">
+    <div class="nav-bg"></div>
+    <ul style=" list-style: none;
+    margin: 0;
+    padding: .2em 2em;
+    float: right;">
+      
+      <li style=" display: inline-block;
+      
+      margin: 0;
+      padding: .2em .7em;"><a style="width: 100%;
+  height: 100%;
+  color: white;
+  text-decoration: none;
+  font-family: Ubuntu;
+  font-size: 1.15em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  transition: .25s ease-in-out;" mat-button routerLink="/dashboard"> HOME </a></li>
+     
+    </ul>
+    
+  </nav>
+  </div>
+    <!-- <h1>Upcoming Matches!</h1> -->
+    <div class="upcoming">
+    <mat-card class="upcoming-card" *ngFor="let match of upcomingMatches">
+       <mat-card-content>
+           <mat-card-title >  {{match["team-1"]}}</mat-card-title>
+           <p><b>Vs</b></p>
+           <mat-divider [vertical]="true"></mat-divider>
+           <mat-card-title > {{match["team-2"]}}</mat-card-title>
+           <h4>MatchId: {{match["unique_id"]}}</h4>
+           <h4>MatchStarted: {{match["matchStarted"]}}</h4>
+           <h4>MatchType: {{match["type"]}}</h4>
+           <h4>squad: {{match["squad"]}}</h4>
+         </mat-card-content>
+         <mat-card-footer>
+          <button  class="addButton" mat-raised-button color=primary (click)="getMatch(match.unique_id)">Upcoming Matches<mat-icon></mat-icon></button>
+          <!-- <button  mat-raised-button color=primary (click)="viewDetails(match)">Recommend</button> -->
+      </mat-card-footer>
+     </mat-card>
+     <br>
+    </div>
+      </div>
